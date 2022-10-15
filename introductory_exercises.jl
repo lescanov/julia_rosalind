@@ -57,4 +57,34 @@ splice_string_at_given_points("split_string_at_point.txt", 38, 45, 65, 72)
 
 
 """
-# 3. 
+# 3. Conditions and loops
+
+Problem: Given two positive integers a, b, sum all odd integers from a through b.
+
+Solution: 
+Declare variable sum = 0
+For loop of var in range a to b
+    if var %% 2 == 1
+        sum = sum + var
+    end
+    return sum
+"""
+
+function add_odd_integers(a::Int, b::Int)
+    odd_sums = 0
+    for i in a:b
+        if i % 2 == 1
+            odd_sums = odd_sums + i
+        end
+    end
+    return odd_sums
+end
+
+# Testing function
+add_odd_integers(100, 200)
+
+# Rosalind problem
+add_odd_integers(4398, 9327)
+
+"""
+# 4. Working with files
