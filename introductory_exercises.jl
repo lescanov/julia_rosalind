@@ -88,3 +88,43 @@ add_odd_integers(4398, 9327)
 
 """
 # 4. Working with files
+
+Problem: Given a text file, return all even numbered lines
+
+Solution:
+read txt_file as txt:
+    read(txt, as string)
+end
+
+split_string = split(string, delim = "/n")
+
+for i in length(split_string)
+    if i % 2 != 1
+        println(split_string[i])
+    end
+end
+"""
+
+function return_even_numbered_lines(txt_file)
+
+    # Reading in text file, converting to string
+    text = open(txt_file) do file
+        read(file, String)
+    end
+
+    # Returning only even numbered lines
+    split_text = split(text, "\n")
+    for i in eachindex(split_text)
+        if i % 2 != 1
+            println(split_text[i])
+        end
+    end
+end
+
+
+# Testing function
+return_even_numbered_lines("test.txt")
+
+# Running Rosalind problem
+return_even_numbered_lines("return_even_lines.txt")
+
